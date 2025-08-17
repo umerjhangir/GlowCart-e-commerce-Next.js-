@@ -1,0 +1,85 @@
+import { Product } from "../types/product";
+
+
+export const products: Product[] = [
+    {
+      id: "1",
+      name: "Matte Liquid Lipstick",
+      description: "Long-Lasting, waterproof matte lipstick.",
+      price: 1199,
+      image: "/images/matte-lipstick.jpg",
+      category: "Makeup",  
+    },
+    {
+      id: "2",
+      name: "Glow Serum",
+      description: "Radiant skin glow serum with vitemin C.",
+      price: 1799,
+      image: "/images/glow-serum.jpg",
+      category: "Skincare",
+    },
+    {
+      id: "3",
+      name: "Volumizing Mascara",
+      description: "smudge-proof mascara for full lashes.",
+      price: 999,
+      image: "/images/volumizing-mascara.jpg",
+      category: "Makeup",  
+    },
+    {
+      id: "4",
+      name: "Face Cleanser",
+      description: "Gentle daily face cleanser for all skin types.",
+      price: 1499,
+      image:"/images/face-cleanser.jpg",
+      category: "Skincare",  
+    },
+    {
+      id: "5",
+      name: "Hydrating Sheet Mask",
+      description: "soothing hydration for tired skin.",
+      price: 499,
+      image: "/images/sheet-mask.jpg",
+      category: "Skincare",  
+    },
+    {
+      id: "6",
+      name: "Compact Powder",
+      description: "oil-obsorbing compact powder for a matte finish.",
+      price: 899,
+      image: "/images/compact-powder.jpg",
+      category: "Makeup", 
+    },
+    {
+      id: "7",
+      name: "Nail polish set",
+      description: "set of 6 trendy nail polishes.",
+      price: 1299,
+      image: "/images/nail-polish-set.jpg",
+      category: "Nails Care",  
+    },
+    {
+      id: "8",
+      name: "Aloe Vera Gel",
+      description: "Multipurpose aloe vera gel for skin and hair.",
+      price: 699,
+      image: "/images/aloe-vera-gel.jpg",
+      category: "Skincare"  
+    },
+    {
+      id: "9",
+      name: "Makeup Brushes Set",
+      description: "professional soft makeup brushes set.",
+      price: 1999,
+      image: "/images/brushes-set.jpg",
+      category: "Makeup",
+      },
+      {
+       id: "10",
+       name: "BB Cream SPF 30",
+       description: "Lightweight BB cream with sun protection.",
+       price: 1299,
+       image: "/images/bb-cream.jpg",
+       category: "Makeup", 
+      },
+];
