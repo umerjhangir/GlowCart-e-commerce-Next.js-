@@ -1,7 +1,6 @@
 "use client"
 
 import { useCart } from "@/lib/useCart"
-import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 
 export default function Checkoutpage() {
@@ -43,10 +42,11 @@ export default function Checkoutpage() {
 
             <button
                 onClick={handleplaceorder}
-                className="bg-pink-600 hover:bg-pink-700 text-white"
-            >
+                className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg w-full font-semibold"
+                >
                 Place Order
-            </button>
+                </button>
+
         </div>
     );
 }

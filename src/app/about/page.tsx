@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
@@ -6,9 +8,11 @@ export default function AboutPage() {
       </h1>
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Image Section */}
-        <img
-          src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9"
+        <Image
+          src="/images/about.jpeg"
           alt="GlowCart"
+          width={600}  
+          height={400}
           className="rounded-2xl shadow-lg"
         />
 

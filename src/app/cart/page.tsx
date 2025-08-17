@@ -1,63 +1,54 @@
-"use client";
+"use client"
+
 import { useCart } from "@/lib/useCart";
+import { useRouter } from "next/navigation";
 
 export default function CartPage() {
-  const { items, removeFromCart, updateQuantity, clearCart } = useCart();
+  const { items, removeFromCart } = useCart();
+  const router = useRouter();
+
+  if (items.length === 0) {
+    return (
+      <div className="max-w-4xl mx-auto p-6 text-center">
+        <h1 className="text-2xl font-bold mb-4">Your cart is empty</h1>
+        <button
+          onClick={() => router.push("/")}
+          className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg"
+        >
+          Continue Shopping
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+    <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
 
-      {items.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <>
-          <div className="space-y-4">
-            {items.map((item) => (
-              <div
-                key={item.id}
-                className="flex justify-between items-center border-b pb-2"
-              >
-                <div>
-                  <h2 className="font-semibold">{item.name}</h2>
-                  <p>${item.price}</p>
-                  <input
-                    type="number"
-                    min={1}
-                    value={item.quantity}
-                    onChange={(e) =>
-                      updateQuantity(item.id, Number(e.target.value))
-                    }
-                    className="w-16 border p-1"
-                  />
-                </div>
-                <button
-                  className="bg-red-500 text-white px-4 py-1 rounded"
-                  onClick={() => removeFromCart(item.id)}
-                >
-                  Remove
-                </button>
-              </div>
-            ))}
+      <div className="mb-6 space-y-4">
+        {items.map((item) => (
+          <div key={item.id} className="flex justify-between border-b pb-2">
+            <span>
+              {item.name} x {item.quantity}
+            </span>
+            <span>Rs. {item.price * item.quantity}</span>
           </div>
+        ))}
+      </div>
 
-          <div className="mt-4 flex justify-between">
-            <button
-              className="bg-gray-500 text-white px-4 py-2 rounded"
-              onClick={clearCart}
-            >
-              Clear Cart
-            </button>
-            <p className="text-lg font-semibold">
-              Total: $
-              {items.reduce(
-                (total, item) => total + item.price * item.quantity,
-                0
-              )}
-            </p>
-          </div>
-        </>
-      )}
+      <div className="text-right font-bold text-xl mb-6">
+        Total: Rs.{" "}
+        {items.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        )}
+      </div>
+      <button
+        onClick={() => router.push("/checkout")}
+        className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg w-full font-semibold"
+      >
+        Proceed to Checkout
+      </button>
     </div>
   );
 }
