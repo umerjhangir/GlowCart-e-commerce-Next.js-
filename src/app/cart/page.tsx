@@ -4,7 +4,7 @@ import { useCart } from "@/lib/useCart";
 import { useRouter } from "next/navigation";
 
 export default function CartPage() {
-  const { items, removeFromCart } = useCart();
+  const { items,} = useCart();
   const router = useRouter();
 
   if (items.length === 0) {
